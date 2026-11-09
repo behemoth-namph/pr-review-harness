@@ -1,0 +1,66 @@
+{
+  "projectContext": "Example: a web app with a Rails API, a Next.js frontend and a shared UI package in one Yarn-workspaces monorepo.",
+  "conventionDocs": [
+    "CLAUDE.md",
+    ".claude/rules/*.md"
+  ],
+  "scopeMarkers": [
+    "Out of scope",
+    "Non-goals",
+    "Follow-up issue",
+    "Handled separately"
+  ],
+  "commentLanguage": "English",
+  "reportLanguage": "English",
+  "workspaceRoot": ".claude/planning/pr-review",
+  "refDigits": [
+    3,
+    6
+  ],
+  "maxFullSources": 14,
+  "maxTimelinePrs": 6,
+  "fullDepth": 1,
+  "ci": {
+    "pathGroups": {
+      "backend": [
+        "packages/backend/"
+      ],
+      "frontend": [
+        "packages/web/",
+        "packages/ui/"
+      ]
+    },
+    "tests": [
+      {
+        "name": "RSpec",
+        "group": "backend",
+        "ciJob": "Backend (Rails) / Test",
+        "ciRunsTests": true,
+        "evidencePattern": "\\d+ examples?, \\d+ failures?"
+      },
+      {
+        "name": "Vitest",
+        "group": "frontend",
+        "ciJob": "Frontend (Next) / Test",
+        "ciRunsTests": false,
+        "evidencePattern": "(Test Files|Tests)\\s+\\d+ passed|vitest"
+      }
+    ],
+    "notes": [
+      "Example fact: the backend test job runs the whole suite, so green means every spec passed.",
+      "Example fact: the frontend test job only installs dependencies (its test step is disabled), so green proves nothing; require test evidence in the PR description.",
+      "Example fact: the lint step ends with `|| true`, so a green lint job does not prove the code is lint-clean.",
+      "Example fact: jobs that are `skipping` are normal when the change-detection job finds nothing relevant."
+    ]
+  },
+  "pullRequest": {
+    "placeholderPatterns": [
+      "Describe anything reviewers or QA",
+      "Add screenshots here"
+    ],
+    "migrationPaths": [
+      "*db/migrate/*"
+    ],
+    "migrationKeywords": "migrat"
+  }
+}

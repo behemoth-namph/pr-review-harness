@@ -1,0 +1,9 @@
+{
+  "name": "pr-review-harness",
+  "version": "0.1.0",
+  "description": "Spec-first review of someone else's PR: builds one spec from the issue network, reviews the code twice independently, verifies every finding, keeps comments to the few that need action, and checks approval readiness. Suggests comments, never posts them.",
+  "author": { "name": "behemoth-namph" },
+  "repository": "https://github.com/behemoth-namph/pr-review-harness",
+  "license": "MIT",
+  "keywords": ["code-review", "pull-request", "github", "workflow", "agents"]
+}

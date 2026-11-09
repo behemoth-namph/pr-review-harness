@@ -1,0 +1,14 @@
+{
+  "name": "pr-review-harness",
+  "owner": {
+    "name": "behemoth-namph"
+  },
+  "plugins": [
+    {
+      "name": "pr-review-harness",
+      "source": "./",
+      "description": "Spec-first PR review harness: issue network -> consolidated spec -> two independent review passes -> adversarial verification -> comment-threshold triage -> suggested inline comments and approval check."
+    }
+  ],
+  "description": "Spec-first PR review harness for Claude Code."
+}
